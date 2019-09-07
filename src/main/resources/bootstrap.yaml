@@ -7,7 +7,7 @@ spring:
   profiles:
     active: default
   datasource:
-    url: jdbc:mysql://${betapp-profile-svc.hostname}:${betapp-profile-svc.port}/${betapp-profile-svc.dbName}?useLegacyDatetimeCode=false&autoReconnect=true
-    username: ${betapp-profile-svc.username}
-    password: ${betapp-profile-svc.password}
+    url: jdbc:mysql://${betapp-tournament-svc.hostname}:${betapp-tournament-svc.port}/${betapp-tournament-svc.dbName}?useLegacyDatetimeCode=false&autoReconnect=true
+    username: ${betapp-tournament-svc.username}
+    password: ${betapp-tournament-svc.password}
 

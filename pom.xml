@@ -12,7 +12,7 @@
 	<artifactId>betapp-tournament-svc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>betapp-tournament-svc</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Microservice to manage the tournament and tournament settings</description>
 
 	<properties>
 		<java.version>11</java.version>
