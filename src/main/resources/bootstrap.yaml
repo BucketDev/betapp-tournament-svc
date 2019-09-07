@@ -10,4 +10,10 @@ spring:
     url: jdbc:mysql://${betapp-tournament-svc.hostname}:${betapp-tournament-svc.port}/${betapp-tournament-svc.dbName}?useLegacyDatetimeCode=false&autoReconnect=true
     username: ${betapp-tournament-svc.username}
     password: ${betapp-tournament-svc.password}
-
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
