@@ -2,11 +2,14 @@ package com.bucketdev.betapptournamentsvc.endpoint;
 
 import com.bucketdev.betapptournamentsvc.dto.TournamentDTO;
 import com.bucketdev.betapptournamentsvc.dto.UserDTO;
+import com.bucketdev.betapptournamentsvc.proxy.UserControllerProxy;
 import com.bucketdev.betapptournamentsvc.service.TournamentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Set;
 
 /**
  * @author rodrigo.loyola
@@ -16,7 +19,15 @@ import org.springframework.web.bind.annotation.*;
 public class TournamentController {
 
     @Autowired
+    private UserControllerProxy userControllerProxy;
+
+    @Autowired
     private TournamentService service;
+
+    @GetMapping("/users/{name}")
+    public Set<UserDTO> users(@PathVariable String name) {
+        return userControllerProxy.findByDisplayName(name).getBody();
+    }
 
     @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
     public ResponseEntity<TournamentDTO> upsert(@RequestBody TournamentDTO dto) {

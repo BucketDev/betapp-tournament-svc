@@ -12,7 +12,9 @@ public class UserDTO implements Serializable {
 
     private long id;
     private String uid;
+    private String email;
     private String displayName;
     private String photoUrl;
+    private String provider;
 
 }
